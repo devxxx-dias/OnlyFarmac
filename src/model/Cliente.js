@@ -1,4 +1,5 @@
 const knex = require("../config/connection");
+const bcrypt = require('bcrypt');
 
 class Cliente {
     #cpf
@@ -25,9 +26,10 @@ class Cliente {
 
     }
 
-    oEmailPertenceAoCliente = async () => {
+    oEmailPertenceAoCliente = async (id) => {
         const emailCadastrado = await knex('clientes')
-            .whereNot({ email: this.#email })
+            .whereNot({ id })
+            .andWhere({ email: this.#email })
             .first();
         return emailCadastrado;
 
@@ -40,17 +42,33 @@ class Cliente {
         return cpfCadastrado;
     }
 
-    oCpfPertenceAoCliente = async () => {
+    oCpfPertenceAoCliente = async (id) => {
         const cpfCadastrado = await knex('clientes')
-            .whereNot({ cpf: this.#cpf })
+            .whereNot({ id })
+            .andWhere({ cpf: this.#cpf })
             .first();
 
         return cpfCadastrado;
     }
 
+
+
     registrarBancoDeDados = async () => {
+        const senhaCriptografada = await bcrypt.hash(this.#senha, 10);
+
         const clienteNovo = await knex('clientes')
-            .insert({ cpf: this.#cpf, nome_completo: this.#nome_completo, data_de_nascimento: this.#data_de_nascimento, email: this.#email, senha: this.#senha })
+            .insert({ cpf: this.#cpf, nome_completo: this.#nome_completo, data_de_nascimento: this.#data_de_nascimento, email: this.#email, senha: senhaCriptografada })
+            .returning('*');
+        return clienteNovo[0];
+
+    }
+
+    atualizarBancoDeDados = async (id) => {
+        const senhaCriptografada = await bcrypt.hash(this.#senha, 10);
+
+        const clienteNovo = await knex('clientes')
+            .update({ cpf: this.#cpf, nome_completo: this.#nome_completo, data_de_nascimento: this.#data_de_nascimento, email: this.#email, senha: senhaCriptografada })
+            .where({ id })
             .returning('*');
         return clienteNovo[0];
 

@@ -15,7 +15,7 @@ const autenticarUsuario = async (req, res, next) => {
 
         const { id } = jwt.verify(token, senhaJwt);
 
-        const usuarioValidado = await knex('usuarios')
+        const usuarioValidado = await knex('clientes')
             .where({ id })
             .first()
 
