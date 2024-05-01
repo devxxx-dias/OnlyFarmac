@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------------------------------Cabeçalho--------------------------------------------*/
+.header{
+    display: flex;
+    background-color:#D6EAF8;
+    background-size: cover;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  
+}
+
+.header img{
+    height: 100px;
+}
+
+.header button{
+    padding: 30px;
+    margin-right: -230px;    
+}
+
+.header button img{
+    position: relative;
+    margin: -28px;    
+}
+
+
+
+/*-------------------------------------Principal--------------------------------------------*/
+.main{
+    display: flex;
+    background-color:#FDFEFE;
+    background-size: cover;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;    
+    max-height: fit-content;
+}
+
+.main img{
+    height: 270px;
+}
+
+/*-------------------------------------Formulário--------------------------------------------*/
+form{
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 900px;
+    align-items: center; 
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    background-color:#FDFEFE;
+    width: 600px;
+    padding:16px;	
+    height: 730px;
+    font-size: 55px;
+    color: rgb(65, 64, 64);
+}
+
+input{
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    padding:30px;	
+    height: 30px;
+    color: rgb(65, 64, 64);
+    border-radius: 50px;
+    
+}
+
+input[type="text"] {
+    font-size:45px;
+    background-color: #def3fc;
+    border-color: #def3fc;
+}
+input[type="email"] {
+    font-size:45px;
+    background-color: #def3fc;    
+    border-color: #def3fc;
+}
+input[type="password"] {
+    font-size:45px;
+    background-color: #def3fc;
+    border-color: #def3fc;
+}
+input[type="date"] {
+    font-size:30px;
+    background-color: #def3fc;
+    border-color: #def3fc;    
+}
+
+/*-------------------------------------BotãoCadastrar--------------------------------------------*/
+.cadButton{
+    display: flex;
+    flex-direction: column;
+    margin: 70px 200px;
+    padding: 20px;
+    font-size: 1.1em;
+    background-color: #AED6F1;
+    border-radius: 10px;
+    border: #AED6F1;      
+}
+
+button{
+    background-color: #AED6F1;
+    height: 60px;
+    border: #AED6F1;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(65, 64, 64);
+}
