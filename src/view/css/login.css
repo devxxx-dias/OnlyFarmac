@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    background-color:#D6EAF8;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.header img{
+    height: 100px;
+}
+
+.header button{
+    padding: 30px;
+    margin-right: -230px;
+    background-color: lightblue; /* Cor azul claro para os botões internos */
+}
+
+.header button img{
+    position: relative;
+    margin: -28px;
+}
+
+.main{
+    display: flex;
+    background-color:#FDFEFE;
+    flex-direction: column;
+    gap: 100px;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;    
+    max-height: fit-content;
+}
+
+.main img{
+    height: 270px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 900px;
+    align-items: center; 
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    background-color:#FDFEFE;
+    width: 600px;
+    padding:16px;	
+    height: 730px;
+    font-size: 55px;
+    color: rgb(65, 64, 64);
+}
+
+input{
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    padding:30px;	
+    height: 30px;
+    color: rgb(65, 64, 64);
+    border-radius: 50px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    font-size:45px;
+    background-color: #def3fc;
+    border-color: #def3fc; 
+    margin-bottom: 20px;
+}
+
+.cadButton{
+    display: flex;
+    flex-direction: column;
+    margin: 70px 200px;
+    padding: 20px;
+    font-size: 1.1em;
+    background-color: #AED6F1;
+    border-radius: 10px;
+    border: #AED6F1;      
+}
+
+button{
+    background-color: lightblue; /* Cor azul claro para o botão "entrar" */
+    border: darkblue; /* Borda escura para o botão "entrar" */
+    height: 60px;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(65, 64, 64);
+}
