@@ -21,7 +21,7 @@ const cadastrarCliente = async (req, res) => {
         return res.status(201).json(await novoCliente.registrarBancoDeDados());
 
     } catch (error) {
-
+        console.log(error);
         return res.status(500).json({ mensagem: "Erro interno do servidor" })
     }
 
@@ -47,7 +47,7 @@ const loginCliente = async (req, res) => {
 
         return res.status(200).json({ usuario, token });
     } catch (error) {
-
+        console.log(error);
         return res.status(500).json({ Mensagem: 'Erro inesperado do sistema.' });
     }
 };
